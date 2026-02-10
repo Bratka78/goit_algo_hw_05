@@ -1,4 +1,4 @@
-from typing import Callable
+from typing import Callable, Iterable
 import re
 
 def generator_numbers(text: str):
@@ -7,10 +7,10 @@ def generator_numbers(text: str):
     for number in numbers:
         yield float(number.replace(",", "."))
 
-def sum_profit(text: str, func: Callable[[str],float]):
+
+def sum_profit(text: str, func: Callable[[str], Iterable[float]]):
     # Обчислює суму чисел з генератора
     return sum(func(text))
-
 
 
 
