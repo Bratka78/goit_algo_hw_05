@@ -3,7 +3,7 @@ import re
 
 def generator_numbers(text: str):
     # Повертає всі дійсні числа
-    numbers = re.findall(r"\b\d+(?:[.,]\d+)?\b", text)
+    numbers = re.findall(r"(?<=\s)\d+(?:[.,]\d+)?(?=\s)", text)
     for number in numbers:
         yield float(number.replace(",", "."))
 
