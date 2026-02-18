@@ -19,6 +19,10 @@ def parse_input(user_input):
 @input_error
 def add_contact(args, contacts):
         name, phone = args
+        if args[0] in contacts:
+            add_answer = input("Such contact name exists, overwrite yes/no?").strip().lower()
+            if add_answer != "yes":
+                return "Contact not recorded"               
         contacts[name] = phone
         return "Contact added."
 

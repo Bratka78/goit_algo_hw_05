@@ -14,14 +14,7 @@ def main():
         elif command == "hello":
             print("How can I help you?")
         elif command == "add":
-            if args[0] in contacts:
-                add_answer= input("Such contact name exists, overwrite yes/no?").strip().lower()
-                if add_answer != "yes":
-                    print("Contact not recorded")
-                else:
-                    print(add_contact(args, contacts))
-            else:
-                print(add_contact(args, contacts))
+            print(add_contact(args, contacts))
         elif command == "change":
             print(change_contact(args, contacts))
         elif command == "phone":
